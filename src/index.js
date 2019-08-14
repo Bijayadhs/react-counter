@@ -1,15 +1,18 @@
-import React, { useState } from 'react'
-import ReactDOM from 'react-dom'
-import Button from './components/Button'
+import React, { useState } from "react";
+import ReactDOM from "react-dom";
+import Button from "./components/Button";
 
-import './styles.css'
+import "./styles.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   const incrementCount = increment => {
-    setCount(count + increment)
-  }
+    setCount(count + increment);
+    if (increment === "reset") {
+      setCount(0);
+    }
+  };
 
   return (
     <div className="App">
@@ -17,10 +20,11 @@ function App() {
       <Button increment={10} onClickFunction={incrementCount} />
       <Button increment={100} onClickFunction={incrementCount} />
       <Button increment={1000} onClickFunction={incrementCount} />
+      <Button increment={"reset"} onClickFunction={incrementCount} />
       <span>{count}</span>
     </div>
-  )
+  );
 }
 
-const rootElement = document.getElementById('root')
-ReactDOM.render(<App />, rootElement)
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
