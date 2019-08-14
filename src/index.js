@@ -16,12 +16,15 @@ function App() {
 
   return (
     <div className="App">
-      <Button increment={1} onClickFunction={incrementCount} />
-      <Button increment={10} onClickFunction={incrementCount} />
-      <Button increment={100} onClickFunction={incrementCount} />
-      <Button increment={1000} onClickFunction={incrementCount} />
-      <Button increment={"reset"} onClickFunction={incrementCount} />
-      <span>{count}</span>
+      <h1>Counter App</h1>
+      <div class="button">
+        <Button increment={1} onClickFunction={incrementCount} />
+        <Button increment={10} onClickFunction={incrementCount} />
+        <Button increment={100} onClickFunction={incrementCount} />
+        <Button increment={1000} onClickFunction={incrementCount} />
+        <Button increment={"reset"} onClickFunction={incrementCount} />
+      </div>
+      <span style={{ border: "2px solid #green" }}>{count}</span>
     </div>
   );
 }
